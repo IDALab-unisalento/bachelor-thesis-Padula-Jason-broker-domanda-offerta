@@ -1,0 +1,102 @@
+it/unisalento/brokerapp/DTOclasses/OfferTreatsDTO.java
+ it.unisalento.brokerapp.DTOclasses.OfferTreatsDTO
+it/unisalento/brokerapp/iservices/IOfferService.java
+ it.unisalento.brokerapp.iservices.IOfferService
+it/unisalento/brokerapp/exceptions/SavingOfferException.java
+ it.unisalento.brokerapp.exceptions.SavingOfferException
+it/unisalento/brokerapp/serviceImpl/UserServiceImpl.java
+ it.unisalento.brokerapp.serviceImpl.UserServiceImpl
+it/unisalento/brokerapp/DTOclasses/TreatsDTO.java
+ it.unisalento.brokerapp.DTOclasses.TreatsDTO
+it/unisalento/brokerapp/restcontrollers/UserRestController.java
+ it.unisalento.brokerapp.restcontrollers.UserRestController
+it/unisalento/brokerapp/domainClasses/Treats.java
+ it.unisalento.brokerapp.domainClasses.Treats
+it/unisalento/brokerapp/DTOclasses/UserDTO.java
+ it.unisalento.brokerapp.DTOclasses.UserDTO
+it/unisalento/brokerapp/serviceImpl/OfferTreatsServiceImpl.java
+ it.unisalento.brokerapp.serviceImpl.OfferTreatsServiceImpl
+it/unisalento/brokerapp/restcontrollers/OfferRestController.java
+ it.unisalento.brokerapp.restcontrollers.OfferRestController
+it/unisalento/brokerapp/restcontrollers/VectorRestController.java
+ it.unisalento.brokerapp.restcontrollers.VectorRestController
+it/unisalento/brokerapp/exceptions/CompanyNotFoundException.java
+ it.unisalento.brokerapp.exceptions.CompanyNotFoundException
+it/unisalento/brokerapp/domainClasses/Offer.java
+ it.unisalento.brokerapp.domainClasses.Offer
+it/unisalento/brokerapp/exceptions/SavingUserException.java
+ it.unisalento.brokerapp.exceptions.SavingUserException
+it/unisalento/brokerapp/serviceImpl/OfferVectorServiceImpl.java
+ it.unisalento.brokerapp.serviceImpl.OfferVectorServiceImpl
+it/unisalento/brokerapp/restcontrollers/TreatsRestController.java
+ it.unisalento.brokerapp.restcontrollers.TreatsRestController
+it/unisalento/brokerapp/domainClasses/User.java
+ it.unisalento.brokerapp.domainClasses.User
+it/unisalento/brokerapp/iservices/IVectorService.java
+ it.unisalento.brokerapp.iservices.IVectorService
+it/unisalento/brokerapp/exceptions/OfferNotFoundException.java
+ it.unisalento.brokerapp.exceptions.OfferNotFoundException
+it/unisalento/brokerapp/domainClasses/Company.java
+ it.unisalento.brokerapp.domainClasses.Company
+it/unisalento/brokerapp/restcontrollers/OfferTreatsRestController.java
+ it.unisalento.brokerapp.restcontrollers.OfferTreatsRestController
+it/unisalento/brokerapp/iservices/IUserService.java
+ it.unisalento.brokerapp.iservices.IUserService
+it/unisalento/brokerapp/DTOclasses/OfferVectorDTO.java
+ it.unisalento.brokerapp.DTOclasses.OfferVectorDTO
+it/unisalento/brokerapp/serviceImpl/TreatsServiceImpl.java
+ it.unisalento.brokerapp.serviceImpl.TreatsServiceImpl
+it/unisalento/brokerapp/exceptions/OfferTreatsNotFoundException.java
+ it.unisalento.brokerapp.exceptions.OfferTreatsNotFoundException
+it/unisalento/brokerapp/serviceImpl/VectorServiceImpl.java
+ it.unisalento.brokerapp.serviceImpl.VectorServiceImpl
+it/unisalento/brokerapp/iservices/ITreatsService.java
+ it.unisalento.brokerapp.iservices.ITreatsService
+it/unisalento/brokerapp/restcontrollers/CompanyRestController.java
+ it.unisalento.brokerapp.restcontrollers.CompanyRestController
+it/unisalento/brokerapp/BrokerAppApplication.java
+ it.unisalento.brokerapp.BrokerAppApplication
+it/unisalento/brokerapp/exceptions/SavingVectorException.java
+ it.unisalento.brokerapp.exceptions.SavingVectorException
+it/unisalento/brokerapp/exceptions/VectorNotFoundException.java
+ it.unisalento.brokerapp.exceptions.VectorNotFoundException
+it/unisalento/brokerapp/domainClasses/OfferVector.java
+ it.unisalento.brokerapp.domainClasses.OfferVector
+it/unisalento/brokerapp/DTOclasses/OfferDTO.java
+ it.unisalento.brokerapp.DTOclasses.OfferDTO
+it/unisalento/brokerapp/DTOclasses/Vector.java
+ it.unisalento.brokerapp.DTOclasses.Vector
+it/unisalento/brokerapp/exceptions/UserNotFoundException.java
+ it.unisalento.brokerapp.exceptions.UserNotFoundException
+it/unisalento/brokerapp/exceptions/TreatsNotFoundException.java
+ it.unisalento.brokerapp.exceptions.TreatsNotFoundException
+it/unisalento/brokerapp/domainClasses/Vector.java
+ it.unisalento.brokerapp.domainClasses.Vector
+it/unisalento/brokerapp/serviceImpl/CompanyServiceImpl.java
+ it.unisalento.brokerapp.serviceImpl.CompanyServiceImpl
+it/unisalento/brokerapp/exceptions/SavingTreatsException.java
+ it.unisalento.brokerapp.exceptions.SavingTreatsException
+it/unisalento/brokerapp/exceptions/SavingCompanyException.java
+ it.unisalento.brokerapp.exceptions.SavingCompanyException
+it/unisalento/brokerapp/iservices/ICompanyService.java
+ it.unisalento.brokerapp.iservices.ICompanyService
+it/unisalento/brokerapp/serviceImpl/OfferServiceImpl.java
+ it.unisalento.brokerapp.serviceImpl.OfferServiceImpl
+it/unisalento/brokerapp/domainClasses/OfferTreats.java
+ it.unisalento.brokerapp.domainClasses.OfferTreats
+it/unisalento/brokerapp/exceptions/OfferVectorNotFoundException.java
+ it.unisalento.brokerapp.exceptions.OfferVectorNotFoundException
+it/unisalento/brokerapp/iservices/IOfferTreatsService.java
+ it.unisalento.brokerapp.iservices.IOfferTreatsService
+it/unisalento/brokerapp/restcontrollers/OfferVectorRestController.java
+ it.unisalento.brokerapp.restcontrollers.OfferVectorRestController
+it/unisalento/brokerapp/iservices/IOfferVectorService.java
+ it.unisalento.brokerapp.iservices.IOfferVectorService
+it/unisalento/brokerapp/DTOclasses/CompanyDTO.java
+ it.unisalento.brokerapp.DTOclasses.CompanyDTO
+it/unisalento/brokerapp/exceptions/SavingOfferVectorException.java
+ it.unisalento.brokerapp.exceptions.SavingOfferVectorException
+it/unisalento/brokerapp/configurations/WebAppConfig.java
+ it.unisalento.brokerapp.configurations.WebAppConfig
+it/unisalento/brokerapp/exceptions/SavingOfferTreatsException.java
+ it.unisalento.brokerapp.exceptions.SavingOfferTreatsException
