@@ -25,8 +25,8 @@ public class Company {
 	String legalForm;
 	String iva;
 	
-	@OneToMany(mappedBy = "company", targetEntity = Offer.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<Offer> offerList; 
+	@OneToMany(mappedBy = "company", targetEntity = CompanyVector.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	List<CompanyVector> companyVectorList; 
 	
 	public Integer getId() {
 		return id;
@@ -76,13 +76,13 @@ public class Company {
 	public void setIva(String iva) {
 		this.iva = iva;
 	}
-	public List<Offer> getOfferList() {
-		return offerList;
+	public List<CompanyVector> getCompanyVectorList() {
+		return companyVectorList;
 	}
-	public void setOfferList(List<Offer> offerList) {
-		this.offerList = offerList;
+	public void setCompanyVectorList(List<CompanyVector> companyVectorList) {
+		this.companyVectorList = companyVectorList;
 	}
-	
+
 	
 	
 }

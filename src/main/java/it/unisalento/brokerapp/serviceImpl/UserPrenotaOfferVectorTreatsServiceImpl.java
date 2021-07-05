@@ -7,65 +7,64 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.unisalento.brokerapp.domainClasses.UserPrenotaOfferVectorTreats;
-import it.unisalento.brokerapp.exceptions.OfferVectorTreatsNotFoundException;
-import it.unisalento.brokerapp.exceptions.SavingUserPrenotaOfferVectorTreatsException;
+import it.unisalento.brokerapp.domainClasses.UserPrenotaVectorRoute;
+import it.unisalento.brokerapp.exceptions.VectorRouteNotFoundException;
+import it.unisalento.brokerapp.exceptions.SavingUserPrenotaVectorRouteException;
 import it.unisalento.brokerapp.exceptions.UserNotFoundException;
-import it.unisalento.brokerapp.exceptions.UserPrenotaOfferVectorTreatsNotFoundException;
-import it.unisalento.brokerapp.exceptions.VectorNotFoundException;
-import it.unisalento.brokerapp.iservices.IUserPrenotaOfferVectorTreatsService;
-import it.unisalento.brokerapp.repositories.UserPrenotaOfferVectorTreatsRepository;
+import it.unisalento.brokerapp.exceptions.UserPrenotaVectorRouteNotFoundException;
+import it.unisalento.brokerapp.iservices.IUserPrenotaVectorRouteService;
+import it.unisalento.brokerapp.repositories.UserPrenotaVectorRouteRepository;
 
 
 @Service
-public class UserPrenotaOfferVectorTreatsServiceImpl implements IUserPrenotaOfferVectorTreatsService{
+public class UserPrenotaOfferVectorTreatsServiceImpl implements IUserPrenotaVectorRouteService{
 
 	@Autowired
-	UserPrenotaOfferVectorTreatsRepository userPrenotaOfferVectorTreatsRepository;
+	UserPrenotaVectorRouteRepository userPrenotaVectorRouteRepository;
 	
 	
 	@Override
-	@Transactional(rollbackOn =SavingUserPrenotaOfferVectorTreatsException.class)
-	public UserPrenotaOfferVectorTreats save(UserPrenotaOfferVectorTreats userPrenotaOfferVectorTreats) throws SavingUserPrenotaOfferVectorTreatsException{
+	@Transactional(rollbackOn =SavingUserPrenotaVectorRouteException.class)
+	public UserPrenotaVectorRoute save(UserPrenotaVectorRoute userPrenotaVectorRoute) throws SavingUserPrenotaVectorRouteException{
 		
 		try {
-			return userPrenotaOfferVectorTreatsRepository.save(userPrenotaOfferVectorTreats);  //l' id se lo crea da solo il db perchè abbiamo taggato con @Id
+			return userPrenotaVectorRouteRepository.save(userPrenotaVectorRoute);  //l' id se lo crea da solo il db perchè abbiamo taggato con @Id
 			}catch (Exception e) {
 				// TODO: handle exception
-				throw new SavingUserPrenotaOfferVectorTreatsException();
+				throw new SavingUserPrenotaVectorRouteException();
 			}
 		
 		}
 	
 	@Override
-	@Transactional(rollbackOn = UserPrenotaOfferVectorTreatsNotFoundException.class) //rollback mi permette di ritornare al punto prima della transazione quando va male
-	public UserPrenotaOfferVectorTreats getById(int id) throws UserPrenotaOfferVectorTreatsNotFoundException {
+	@Transactional(rollbackOn = UserPrenotaVectorRouteNotFoundException.class) //rollback mi permette di ritornare al punto prima della transazione quando va male
+	public UserPrenotaVectorRoute getById(int id) throws UserPrenotaVectorRouteNotFoundException {
 		
 														//function arrow
-		return userPrenotaOfferVectorTreatsRepository.findById(id).orElseThrow(()->new UserPrenotaOfferVectorTreatsNotFoundException());
+		return userPrenotaVectorRouteRepository.findById(id).orElseThrow(()->new UserPrenotaVectorRouteNotFoundException());
 	}
 	
 	@Override
 	@Transactional
-	public List<UserPrenotaOfferVectorTreats> getAll() {
+	public List<UserPrenotaVectorRoute> getAll() {
 		
-		return userPrenotaOfferVectorTreatsRepository.findAll();
+		return userPrenotaVectorRouteRepository.findAll();
 	}
 	
 	@Override
-	@Transactional(rollbackOn = UserPrenotaOfferVectorTreatsNotFoundException.class)
-	public boolean delete (int id) throws UserPrenotaOfferVectorTreatsNotFoundException, IllegalArgumentException{
+	@Transactional(rollbackOn = UserPrenotaVectorRouteNotFoundException.class)
+	public boolean delete (int id) throws UserPrenotaVectorRouteNotFoundException, IllegalArgumentException{
 		
-		UserPrenotaOfferVectorTreats userPrenotaOfferVectorTreats = userPrenotaOfferVectorTreatsRepository.findById(id).orElseThrow(()-> new UserPrenotaOfferVectorTreatsNotFoundException());
-		userPrenotaOfferVectorTreatsRepository.delete(userPrenotaOfferVectorTreats);
+		UserPrenotaVectorRoute userPrenotaVectorRoute = userPrenotaVectorRouteRepository.findById(id).orElseThrow(()-> new UserPrenotaVectorRouteNotFoundException());
+		userPrenotaVectorRouteRepository.delete(userPrenotaVectorRoute);
 		return true;
 	}
 	
 	@Override
-	@Transactional(rollbackOn = UserPrenotaOfferVectorTreatsNotFoundException.class)
-	public List<UserPrenotaOfferVectorTreats> findByUserId(int userId) throws UserNotFoundException {
+	@Transactional(rollbackOn = UserPrenotaVectorRouteNotFoundException.class)
+	public List<UserPrenotaVectorRoute> findByUserId(int userId) throws UserNotFoundException {
 		try {
-			return userPrenotaOfferVectorTreatsRepository.findByUserId(userId);
+			return userPrenotaVectorRouteRepository.findByUserId(userId);
 
 		} catch (Exception e) {
 			throw new UserNotFoundException();
@@ -75,25 +74,25 @@ public class UserPrenotaOfferVectorTreatsServiceImpl implements IUserPrenotaOffe
 	
 	
 	@Override
-	@Transactional(rollbackOn = VectorNotFoundException.class)
-	public List<UserPrenotaOfferVectorTreats> findByOfferVectorTreatsId(int offerVectorTreatsId) throws OfferVectorTreatsNotFoundException {
+	@Transactional(rollbackOn = VectorRouteNotFoundException.class)
+	public List<UserPrenotaVectorRoute> findByVectorRouteId(int vectorTreatsId) throws VectorRouteNotFoundException {
 		try {
-			return userPrenotaOfferVectorTreatsRepository.findByOfferVectorTreatsId(offerVectorTreatsId);
+			return userPrenotaVectorRouteRepository.findByVectorRouteId(vectorTreatsId);
 
 		} catch (Exception e) {
-			throw new OfferVectorTreatsNotFoundException();
+			throw new VectorRouteNotFoundException();
 		}
 		
 	}
 
 	@Override
-	@Transactional(rollbackOn = UserPrenotaOfferVectorTreatsNotFoundException.class)
-	public UserPrenotaOfferVectorTreats findByUserIdAndOfferVectorTreatsId(int userId, int offerVectorTreatsId) throws UserPrenotaOfferVectorTreatsNotFoundException {
+	@Transactional(rollbackOn = UserPrenotaVectorRouteNotFoundException.class)
+	public UserPrenotaVectorRoute findByUserIdAndVectorRouteId(int userId, int vectorRouteId) throws UserPrenotaVectorRouteNotFoundException {
 		try {
-			return userPrenotaOfferVectorTreatsRepository.findByUserIdAndOfferVectorTreatsId(userId,offerVectorTreatsId);
+			return userPrenotaVectorRouteRepository.findByUserIdAndVectorRouteId(userId,vectorRouteId);
 
 		} catch (Exception e) {
-			throw new UserPrenotaOfferVectorTreatsNotFoundException();
+			throw new UserPrenotaVectorRouteNotFoundException();
 		}
 		
 	}

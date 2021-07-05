@@ -1,11 +1,15 @@
 package it.unisalento.brokerapp.domainClasses;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -23,6 +27,10 @@ public class User {
 	String nation;
 	String phoneNumber;
 	Date bornDate;
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	List<UserPrenotaVectorRoute> prenotazioniList;
+	
 	
 	public Integer getId() {
 		return id;
@@ -77,6 +85,12 @@ public class User {
 	}
 	public void setBornDate(Date bornDate) {
 		this.bornDate = bornDate;
+	}
+	public List<UserPrenotaVectorRoute> getPrenotazioniList() {
+		return prenotazioniList;
+	}
+	public void setPrenotazioniList(List<UserPrenotaVectorRoute> prenotazioniList) {
+		this.prenotazioniList = prenotazioniList;
 	}
 	
 	

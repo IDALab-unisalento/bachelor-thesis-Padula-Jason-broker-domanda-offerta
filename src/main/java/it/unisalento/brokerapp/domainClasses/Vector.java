@@ -20,11 +20,9 @@ public class Vector {
 	String name;
 	int capacity; //kg trasportabili
 	
-	@OneToMany(mappedBy = "offer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<OfferVector> offerVectorList;
-	
-	@OneToMany(mappedBy = "treats", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<OfferVectorTreats> vectorTreatsList;
+	@OneToMany(mappedBy = "vector", targetEntity = CompanyVector.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	List<CompanyVector> companyVectorList;
+
 	
 	public Integer getId() {
 		return id;
@@ -44,19 +42,13 @@ public class Vector {
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
-	public List<OfferVector> getOfferVectorList() {
-		return offerVectorList;
+	public List<CompanyVector> getCompanyVectorList() {
+		return companyVectorList;
 	}
-	public void setOfferVectorList(List<OfferVector> offerVectorList) {
-		this.offerVectorList = offerVectorList;
+	public void setCompanyVectorList(List<CompanyVector> companyVectorList) {
+		this.companyVectorList = companyVectorList;
 	}
-	public List<OfferVectorTreats> getVectorTreatsList() {
-		return vectorTreatsList;
-	}
-	public void setVectorTreatsList(List<OfferVectorTreats> vectorTreatsList) {
-		this.vectorTreatsList = vectorTreatsList;
-	}
-	
+
 	
 }
 
