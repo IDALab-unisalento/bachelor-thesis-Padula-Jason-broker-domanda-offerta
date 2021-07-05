@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import it.unisalento.brokerapp.domainClasses.OfferVector;
 import it.unisalento.brokerapp.exceptions.OfferNotFoundException;
-import it.unisalento.brokerapp.exceptions.VectorTreatsNotFoundException;
+import it.unisalento.brokerapp.exceptions.OfferVectorTreatsNotFoundException;
 import it.unisalento.brokerapp.exceptions.OfferVectorNotFoundException;
 import it.unisalento.brokerapp.exceptions.SavingOfferVectorException;
 import it.unisalento.brokerapp.exceptions.VectorNotFoundException;
@@ -65,7 +65,7 @@ public class OfferVectorServiceImpl implements IOfferVectorService{
 	
 	
 	@Override
-	@Transactional(rollbackOn = VectorTreatsNotFoundException.class)
+	@Transactional(rollbackOn = OfferVectorTreatsNotFoundException.class)
 	public List<OfferVector> findByOfferId(int offerId) throws OfferNotFoundException {
 		try {
 			return offerVectorRepository.findByOfferId(offerId);
@@ -78,7 +78,7 @@ public class OfferVectorServiceImpl implements IOfferVectorService{
 	
 	
 	@Override
-	@Transactional(rollbackOn = VectorTreatsNotFoundException.class)
+	@Transactional(rollbackOn = OfferVectorTreatsNotFoundException.class)
 	public List<OfferVector> findByVectorId(int vectorId) throws VectorNotFoundException {
 		try {
 			return offerVectorRepository.findByVectorId(vectorId);

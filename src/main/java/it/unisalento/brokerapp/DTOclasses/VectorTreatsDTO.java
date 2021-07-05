@@ -5,7 +5,7 @@ import java.sql.Date;
 public class VectorTreatsDTO {
 
 	Integer id;
-	Integer vectorId;
+	Integer offerVectorId;
 	Integer treatsId;
 	
 	Date  startDate;
@@ -19,12 +19,11 @@ public class VectorTreatsDTO {
 		this.id = id;
 	}
 
-	
-	public Integer getVectorId() {
-		return vectorId;
+	public Integer getOfferVectorId() {
+		return offerVectorId;
 	}
-	public void setVectorId(Integer vectorId) {
-		this.vectorId = vectorId;
+	public void setOfferVectorId(Integer offerVectorId) {
+		this.offerVectorId = offerVectorId;
 	}
 	public Integer getTreatsId() {
 		return treatsId;

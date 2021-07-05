@@ -20,8 +20,8 @@ public class Treats {
 	String startCity;
 	String endCity;
 
-	@OneToMany(mappedBy = "vector", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<VectorTreats> vectorTreatsList;
+	@OneToMany(mappedBy = "offerVector", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	List<OfferVectorTreats> offerVectorTreatsList;
 	
 	
 	public Integer getId() {
@@ -42,11 +42,11 @@ public class Treats {
 	public void setEndCity(String endCity) {
 		this.endCity = endCity;
 	}
-	public List<VectorTreats> getVectorTreatsList() {
-		return vectorTreatsList;
-	}
-	public void setVectorTreatsList(List<VectorTreats> vectorTreatsList) {
-		this.vectorTreatsList = vectorTreatsList;
+	public List<OfferVectorTreats> getOfferVectorTreatsList() {
+		return offerVectorTreatsList;
+	} 
+	public void setOfferVectorTreatsList(List<OfferVectorTreats> offerVectorTreatsList) {
+		this.offerVectorTreatsList = offerVectorTreatsList;
 	}
 
 

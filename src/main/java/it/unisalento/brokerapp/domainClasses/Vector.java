@@ -24,7 +24,7 @@ public class Vector {
 	List<OfferVector> offerVectorList;
 	
 	@OneToMany(mappedBy = "treats", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<VectorTreats> vectorTreatsList;
+	List<OfferVectorTreats> vectorTreatsList;
 	
 	public Integer getId() {
 		return id;
@@ -50,10 +50,10 @@ public class Vector {
 	public void setOfferVectorList(List<OfferVector> offerVectorList) {
 		this.offerVectorList = offerVectorList;
 	}
-	public List<VectorTreats> getVectorTreatsList() {
+	public List<OfferVectorTreats> getVectorTreatsList() {
 		return vectorTreatsList;
 	}
-	public void setVectorTreatsList(List<VectorTreats> vectorTreatsList) {
+	public void setVectorTreatsList(List<OfferVectorTreats> vectorTreatsList) {
 		this.vectorTreatsList = vectorTreatsList;
 	}
 	

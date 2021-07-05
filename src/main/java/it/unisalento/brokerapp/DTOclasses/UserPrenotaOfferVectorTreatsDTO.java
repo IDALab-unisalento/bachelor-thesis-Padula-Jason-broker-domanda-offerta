@@ -1,11 +1,11 @@
 package it.unisalento.brokerapp.DTOclasses;
 
-public class UserPrenotaVectorTreatsDTO {
+public class UserPrenotaOfferVectorTreatsDTO {
 
 	
 	Integer id;
 	Integer userId;
-	Integer vectorTreatsId;
+	Integer offerVectorTreatsId;
 	float   bookedCapacity; // capacità prenotata in Kg
 	
 	public Integer getId() {
@@ -17,11 +17,12 @@ public class UserPrenotaVectorTreatsDTO {
 
 
 
-	public Integer getVectorTreatsId() {
-		return vectorTreatsId;
+
+	public Integer getOfferVectorTreatsId() {
+		return offerVectorTreatsId;
 	}
-	public void setVectorTreatsId(Integer vectorTreatsId) {
-		this.vectorTreatsId = vectorTreatsId;
+	public void setOfferVectorTreatsId(Integer offerVectorTreatsId) {
+		this.offerVectorTreatsId = offerVectorTreatsId;
 	}
 	public Integer getUserId() {
 		return userId;

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class VectorTreats {
+public class OfferVectorTreats {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class VectorTreats {
 	Date endDate;
 	
 	@ManyToOne(optional = false)
-	Vector vector;
+	OfferVector offerVector;
 	
 	@ManyToOne(optional = false)
 	Treats treats;
@@ -34,12 +34,12 @@ public class VectorTreats {
 	}
 
 
-	public Vector getVector() {
-		return vector;
+	public OfferVector getOfferVector() {
+		return offerVector;
 	}
 
-	public void setVector(Vector vector) {
-		this.vector = vector;
+	public void setOfferVector(OfferVector offerVector) {
+		this.offerVector = offerVector;
 	}
 
 	public Treats getTreats() {

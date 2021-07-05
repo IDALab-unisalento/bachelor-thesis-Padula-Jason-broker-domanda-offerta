@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class UserPrenotaVectorTreats {
+public class UserPrenotaOfferVectorTreats {
 
 	
 
@@ -19,7 +19,7 @@ public class UserPrenotaVectorTreats {
 	User user;
 	
 	@ManyToOne(optional = false)
-	VectorTreats vectorTreats;
+	OfferVectorTreats offerVectorTreats;
 	
 	float bookedCapacity;
 
@@ -39,12 +39,14 @@ public class UserPrenotaVectorTreats {
 		this.user = user;
 	}
 
-	public VectorTreats getVectorTreats() {
-		return vectorTreats;
+	
+
+	public OfferVectorTreats getOfferVectorTreats() {
+		return offerVectorTreats;
 	}
 
-	public void setVectorTreats(VectorTreats vectorTreats) {
-		this.vectorTreats = vectorTreats;
+	public void setOfferVectorTreats(OfferVectorTreats offerVectorTreats) {
+		this.offerVectorTreats = offerVectorTreats;
 	}
 
 	public float getBookedCapacity() {
