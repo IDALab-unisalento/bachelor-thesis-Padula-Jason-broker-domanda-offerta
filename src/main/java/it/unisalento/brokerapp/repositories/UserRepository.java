@@ -8,6 +8,8 @@ import it.unisalento.brokerapp.domainClasses.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
 
+	public User findByName(String name);
+
 	public User findByUsernameAndPassword(String username, String password);
 
 	public User findByUsername(String username); 

@@ -7,8 +7,6 @@ import it.unisalento.brokerapp.domainClasses.Company;
 
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Integer>{
-
-	public Company findByName(String companyName);
 	
 	public Company findByIva(String iva);
 }

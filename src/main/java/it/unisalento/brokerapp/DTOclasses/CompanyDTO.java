@@ -1,15 +1,18 @@
 package it.unisalento.brokerapp.DTOclasses;
 
-public class CompanyDTO {
+import java.util.Date;
+
+public class CompanyDTO extends UserDTO {
 	
 	Integer id;
-	String name;
 	String webSite;
 	String phoneNumber;
 	String headquarters;
 	String jobSector;
 	String legalForm;
 	String iva;
+	boolean disabilitated;
+	Date abilitationDate;
 	
 	public Integer getId() {
 		return id;
@@ -17,12 +20,7 @@ public class CompanyDTO {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
 	public String getWebSite() {
 		return webSite;
 	}
@@ -59,6 +57,18 @@ public class CompanyDTO {
 	public void setIva(String iva) {
 		this.iva = iva;
 	}
+	public boolean isDisabilitated() {
+		return disabilitated;
+	}
+	public void setDisabilitated(boolean disabilitated) {
+		this.disabilitated = disabilitated;
+	}
+	public Date getAbilitationDate() {
+		return abilitationDate;
+	}
+	public void setAbilitationDate(Date abilitationDate) {
+		this.abilitationDate = abilitationDate;
+	} 
 	
 	
 

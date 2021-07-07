@@ -1,45 +1,30 @@
 package it.unisalento.brokerapp.domainClasses;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Company {
+@DiscriminatorValue("company")
+public class Company extends User {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
-	Integer id;
-	
-	String name;
 	String webSite;
 	String phoneNumber;
 	String headquarters;
 	String jobSector;
 	String legalForm;
 	String iva;
+	boolean disabilitated;
+	Date abilitationDate;
 	
 	@OneToMany(mappedBy = "company", targetEntity = CompanyVector.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<CompanyVector> companyVectorList; 
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
 	public String getWebSite() {
 		return webSite;
 	}
@@ -81,6 +66,18 @@ public class Company {
 	}
 	public void setCompanyVectorList(List<CompanyVector> companyVectorList) {
 		this.companyVectorList = companyVectorList;
+	}
+	public boolean isDisabilitated() {
+		return disabilitated;
+	}
+	public void setDisabilitated(boolean disabilitated) {
+		this.disabilitated = disabilitated;
+	}
+	public Date getAbilitationDate() {
+		return abilitationDate;
+	}
+	public void setAbilitationDate(Date abilitationDate) {
+		this.abilitationDate = abilitationDate;
 	}
 
 	

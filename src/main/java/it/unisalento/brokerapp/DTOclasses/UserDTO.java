@@ -1,22 +1,19 @@
 package it.unisalento.brokerapp.DTOclasses;
 
-import java.util.Date;
-
 import javax.validation.constraints.Email;
 
 public class UserDTO {
 
 	Integer id;
 
+
 	String name;
-	String surname;
 	String username;
 	@Email
 	String email;
 	String password;
-	String nation;
-	String phoneNumber;
-	Date bornDate;
+
+	String type;
 	
 	public Integer getId() {
 		return id;
@@ -24,18 +21,7 @@ public class UserDTO {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getSurname() {
-		return surname;
-	}
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -48,23 +34,23 @@ public class UserDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getNation() {
-		return nation;
+	public String getName() {
+		return name;
 	}
-	public void setNation(String nation) {
-		this.nation = nation;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getEmail() {
+		return email;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public Date getBornDate() {
-		return bornDate;
+	public String getType() {
+		return type;
 	}
-	public void setBornDate(Date bornDate) {
-		this.bornDate = bornDate;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	

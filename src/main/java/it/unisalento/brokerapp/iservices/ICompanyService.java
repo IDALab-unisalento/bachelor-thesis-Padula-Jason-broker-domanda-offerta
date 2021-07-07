@@ -17,10 +17,7 @@ public interface ICompanyService {
 	public List<Company> getAll();
 
 	public boolean delete (int id) throws CompanyNotFoundException,IllegalArgumentException;
-	
-	
-	public Company getByName(String companyName) throws CompanyNotFoundException;
-	
+		
 	public Company findByIva(String iva) throws CompanyNotFoundException;
 
 }

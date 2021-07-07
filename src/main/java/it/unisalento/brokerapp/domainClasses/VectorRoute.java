@@ -32,7 +32,7 @@ public class VectorRoute {
 
 	
 	@OneToMany(mappedBy = "vectorRoute", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<UserPrenotaVectorRoute> prenotazioniList;
+	List<AffittuarioPrenotaVectorRoute> prenotazioniList;
 	
 	
 	public Integer getId() {
@@ -84,11 +84,11 @@ public class VectorRoute {
 		this.vector = vector;
 	}
 
-	public List<UserPrenotaVectorRoute> getPrenotazioniList() {
+	public List<AffittuarioPrenotaVectorRoute> getPrenotazioniList() {
 		return prenotazioniList;
 	}
 
-	public void setPrenotazioniList(List<UserPrenotaVectorRoute> prenotazioniList) {
+	public void setPrenotazioniList(List<AffittuarioPrenotaVectorRoute> prenotazioniList) {
 		this.prenotazioniList = prenotazioniList;
 	}
 

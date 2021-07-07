@@ -58,15 +58,6 @@ public class CompanyServiceImpl implements ICompanyService{
 		return true;
 	}
 
-	@Override
-	@Transactional(rollbackOn = CompanyNotFoundException.class)
-	public Company getByName(String companyName) throws CompanyNotFoundException{
-		try {
-			return companyRepository.findByName(companyName);
-		} catch (Exception e) {
-			throw new CompanyNotFoundException();
-			}
-	}
 
 
 	@Override
