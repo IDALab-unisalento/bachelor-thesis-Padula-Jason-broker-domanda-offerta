@@ -1,10 +1,10 @@
 package it.unisalento.brokerapp.DTOclasses;
 
-public class UserPrenotaVectorRouteDTO {
+public class AffittuarioPrenotaVectorRouteDTO {
 
 	
 	Integer id;
-	Integer userId;
+	Integer affittuarioId;
 	Integer vectorRouteId;
 	float   bookedCapacity; // capacità prenotata in Kg
 	
@@ -16,21 +16,19 @@ public class UserPrenotaVectorRouteDTO {
 	}
 
 
-
-
-
 	public Integer getVectorRouteId() {
 		return vectorRouteId;
 	}
 	public void setVectorRouteId(Integer vectorRouteId) {
 		this.vectorRouteId = vectorRouteId;
 	}
-	public Integer getUserId() {
-		return userId;
+	public Integer getAffittuarioId() {
+		return affittuarioId;
 	}
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setAffittuarioId(Integer affittuarioId) {
+		this.affittuarioId = affittuarioId;
 	}
+
 	public float getBookedCapacity() {
 		return bookedCapacity;
 	}
