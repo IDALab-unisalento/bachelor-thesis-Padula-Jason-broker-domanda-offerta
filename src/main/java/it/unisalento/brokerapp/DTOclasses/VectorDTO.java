@@ -4,6 +4,7 @@ public class VectorDTO {
 
 	Integer id;
 	String name;
+	String brand;
 	int capacity; //kg trasportabili
 	
 	public Integer getId() {
@@ -23,6 +24,12 @@ public class VectorDTO {
 	}
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
+	}
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
 	}
 	
 	

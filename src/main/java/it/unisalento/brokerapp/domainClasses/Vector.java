@@ -19,6 +19,7 @@ public class Vector {
 
 	String name;
 	int capacity; //kg trasportabili
+	String brand; // marca
 	
 	@OneToMany(mappedBy = "vector", targetEntity = CompanyVector.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<CompanyVector> companyVectorList;
@@ -48,7 +49,13 @@ public class Vector {
 	public void setCompanyVectorList(List<CompanyVector> companyVectorList) {
 		this.companyVectorList = companyVectorList;
 	}
-
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
 	
 }
 
