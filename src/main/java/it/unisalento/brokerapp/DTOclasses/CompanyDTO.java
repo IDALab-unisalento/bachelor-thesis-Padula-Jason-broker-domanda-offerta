@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class CompanyDTO extends UserDTO {
 	
-	Integer id;
 	String webSite;
 	String phoneNumber;
 	String headquarters;
@@ -14,13 +13,6 @@ public class CompanyDTO extends UserDTO {
 	boolean disabilitated;
 	Date abilitationDate;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	public String getWebSite() {
 		return webSite;
 	}

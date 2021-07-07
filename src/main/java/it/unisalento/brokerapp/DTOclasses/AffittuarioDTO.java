@@ -5,7 +5,6 @@ import java.util.Date;
 
 public class AffittuarioDTO extends UserDTO{
 	
-	Integer id;
 	String surname;
 	String nation;
 	String phoneNumber;
@@ -13,12 +12,6 @@ public class AffittuarioDTO extends UserDTO{
 	boolean disabilitated;
 	Date abilitationDate;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getSurname() {
 		return surname;
