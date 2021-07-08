@@ -57,4 +57,15 @@ public class AffittuarioServiceImpl implements IAffittuarioService{
 		return true;
 	}
 
+	@Override
+	@Transactional(rollbackOn = UserNotFoundException.class)
+	public List<Affittuario> findByDisabilitated(boolean disabilitated) throws UserNotFoundException {
+		try {
+			return userRepository.findByDisabilitated(disabilitated);
+		} catch (Exception e) {
+			throw new UserNotFoundException();
+		}
+	}
+
+	
 }

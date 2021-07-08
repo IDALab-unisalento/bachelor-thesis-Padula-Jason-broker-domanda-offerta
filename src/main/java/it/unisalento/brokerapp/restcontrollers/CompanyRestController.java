@@ -93,4 +93,23 @@ public class CompanyRestController {
 		
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+//  CERCO TUTTE le companies DISABILITATI {/true} O ABILITATI {/false}
+	@RequestMapping(value="/getDisabled/{disabilitated}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<CompanyDTO> getDisabled(@PathVariable boolean disabilitated ) throws  CompanyNotFoundException{
+		
+		List<Company> 	companyList = companyService.findByDisabilitated(disabilitated);
+		List<CompanyDTO> companyDTOList = new ArrayList<CompanyDTO>(); 
+		
+		for (Company company : companyList) {
+			
+			CompanyDTO companyDTO = modelMapper.map(company, CompanyDTO.class);
+
+			companyDTOList.add(companyDTO);
+		}
+			
+		
+		return companyDTOList;
+	}
+	
 }

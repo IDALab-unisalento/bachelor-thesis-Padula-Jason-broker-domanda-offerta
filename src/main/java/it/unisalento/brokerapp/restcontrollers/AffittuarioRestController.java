@@ -93,4 +93,23 @@ public class AffittuarioRestController {
 		
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+//  CERCO TUTTI GLI AFFITTUARI DISABILITATI {/true} O ABILITATI {/false}
+	@RequestMapping(value="/getDisabled/{disabilitated}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<AffittuarioDTO> getDisabled(@PathVariable boolean disabilitated ) throws UserNotFoundException{
+		
+		List<Affittuario> 	affittuarioList = affittuarioService.findByDisabilitated(disabilitated);
+		List<AffittuarioDTO> affittuarioDTOList = new ArrayList<AffittuarioDTO>(); 
+		
+		for (Affittuario affittuario : affittuarioList) {
+			
+			AffittuarioDTO affittuarioDTO = modelMapper.map(affittuario, AffittuarioDTO.class);
+
+			affittuarioDTOList.add(affittuarioDTO);
+		}
+			
+		
+		return affittuarioDTOList;
+	}
+	
 }

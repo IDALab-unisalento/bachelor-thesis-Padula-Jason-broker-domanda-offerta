@@ -71,5 +71,14 @@ public class CompanyServiceImpl implements ICompanyService{
 		}
 	}
 
+	@Override
+	@Transactional(rollbackOn = CompanyNotFoundException.class)
+	public List<Company> findByDisabilitated(boolean disabilitated) throws CompanyNotFoundException {
+		try {
+			return companyRepository.findByDisabilitated(disabilitated);
+		} catch (Exception e) {
+			throw new CompanyNotFoundException();
+		}
+	}
 	
 }

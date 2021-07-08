@@ -18,5 +18,7 @@ public interface IAffittuarioService {
 
 	public boolean delete(int id) throws UserNotFoundException, IllegalArgumentException;
 
+	public List<Affittuario> findByDisabilitated(boolean disabilitated)throws UserNotFoundException;
+
 	
 }

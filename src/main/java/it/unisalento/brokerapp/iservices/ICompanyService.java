@@ -20,4 +20,6 @@ public interface ICompanyService {
 		
 	public Company findByIva(String iva) throws CompanyNotFoundException;
 
+	public List<Company> findByDisabilitated(boolean disabilitated)throws CompanyNotFoundException;
+
 }
