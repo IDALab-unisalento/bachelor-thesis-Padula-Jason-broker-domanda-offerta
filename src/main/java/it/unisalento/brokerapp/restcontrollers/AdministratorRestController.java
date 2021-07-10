@@ -41,7 +41,7 @@ public class AdministratorRestController {
 	public boolean EnableUserById(@RequestBody UserDTO toManage) throws UserNotFoundException {
 
 		if (administratorService.EnableUserById(toManage.getId())) {
-			return true;
+			return true; 
 		}
 		return false;
 	}

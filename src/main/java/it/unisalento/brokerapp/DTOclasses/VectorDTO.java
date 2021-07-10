@@ -6,6 +6,7 @@ public class VectorDTO {
 	String name;
 	String brand;
 	int capacity; //kg trasportabili
+	String licensePlate;
 	
 	public Integer getId() {
 		return id;
@@ -30,6 +31,12 @@ public class VectorDTO {
 	}
 	public void setBrand(String brand) {
 		this.brand = brand;
+	}
+	public String getLicensePlate() {
+		return licensePlate;
+	}
+	public void setLicensePlate(String licensePlate) {
+		this.licensePlate = licensePlate;
 	}
 	
 	
