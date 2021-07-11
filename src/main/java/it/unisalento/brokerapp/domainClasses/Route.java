@@ -23,7 +23,7 @@ public class Route {
 
 
 	@OneToMany(mappedBy = "route", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<VectorRoute> vectorRouteList;
+	List<ViaggioRoute> vectorRouteList;
 	
 	
 	public Integer getId() {
@@ -45,10 +45,10 @@ public class Route {
 		this.endCity = endCity;
 	}
 
-	public List<VectorRoute> getVectorRouteList() {
+	public List<ViaggioRoute> getVectorRouteList() {
 		return vectorRouteList;
 	}
-	public void setVectorRouteList(List<VectorRoute> vectorRouteList) {
+	public void setVectorRouteList(List<ViaggioRoute> vectorRouteList) {
 		this.vectorRouteList = vectorRouteList;
 	}
 	public float getDistanceKm() {

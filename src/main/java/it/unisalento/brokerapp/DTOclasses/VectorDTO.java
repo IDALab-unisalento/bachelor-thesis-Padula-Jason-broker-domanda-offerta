@@ -6,7 +6,7 @@ public class VectorDTO {
 	String name;
 	String brand;
 	int capacity; //kg trasportabili
-	String licensePlate;
+	String licensePlate; 
 	
 	public Integer getId() {
 		return id;

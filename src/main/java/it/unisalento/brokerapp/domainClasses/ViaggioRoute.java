@@ -1,6 +1,6 @@
 package it.unisalento.brokerapp.domainClasses;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,28 +13,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class VectorRoute {
+public class ViaggioRoute {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
+	Integer id; 
+
+	@ManyToOne(optional = false)
+	Route route;
+	
+	@ManyToOne(optional = false)
+	Viaggio viaggio;
+
 	float availableCapacity; // questo è il peso che sarà da aggiungere alla disponibilità dell'companyVector
 	
 	Date startDate;
 	Date endDate;
 	
-	@ManyToOne(optional = false)
-	Route route;
-	
-	
-	@ManyToOne(optional = false)
-	Vector vector;
+	@OneToMany(mappedBy = "viaggioRoute", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	List<AffittuarioPrenotaViaggioRoute> prenotazioniList;
 
-	
-	@OneToMany(mappedBy = "vectorRoute", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<AffittuarioPrenotaVectorRoute> prenotazioniList;
-	
-	
 	public Integer getId() {
 		return id;
 	}
@@ -43,6 +41,21 @@ public class VectorRoute {
 		this.id = id;
 	}
 
+	public Route getRoute() {
+		return route;
+	}
+
+	public void setRoute(Route route) {
+		this.route = route;
+	}
+
+	public Viaggio getViaggio() {
+		return viaggio;
+	}
+
+	public void setViaggio(Viaggio viaggio) {
+		this.viaggio = viaggio;
+	}
 
 	public float getAvailableCapacity() {
 		return availableCapacity;
@@ -68,30 +81,15 @@ public class VectorRoute {
 		this.endDate = endDate;
 	}
 
-	public Route getRoute() {
-		return route;
-	}
-
-	public void setRoute(Route route) {
-		this.route = route;
-	}
-
-	public Vector getVector() {
-		return vector;
-	}
-
-	public void setVector(Vector vector) {
-		this.vector = vector;
-	}
-
-	public List<AffittuarioPrenotaVectorRoute> getPrenotazioniList() {
+	public List<AffittuarioPrenotaViaggioRoute> getPrenotazioniList() {
 		return prenotazioniList;
 	}
 
-	public void setPrenotazioniList(List<AffittuarioPrenotaVectorRoute> prenotazioniList) {
+	public void setPrenotazioniList(List<AffittuarioPrenotaViaggioRoute> prenotazioniList) {
 		this.prenotazioniList = prenotazioniList;
 	}
-
+	
+	
 
  
 	

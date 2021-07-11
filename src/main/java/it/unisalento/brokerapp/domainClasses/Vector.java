@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+
 @Entity
 public class Vector {
 
@@ -20,10 +21,13 @@ public class Vector {
 	String name;
 	int capacity; //kg trasportabili
 	String brand; // marca
+	String licensePlate;
 	
 	@OneToMany(mappedBy = "vector", targetEntity = CompanyVector.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<CompanyVector> companyVectorList;
 
+	@OneToMany(mappedBy = "vector", targetEntity = Viaggio.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	List<Viaggio> viaggi;
 	
 	public Integer getId() {
 		return id;
@@ -54,6 +58,18 @@ public class Vector {
 	}
 	public void setBrand(String brand) {
 		this.brand = brand;
+	}
+	public String getLicensePlate() {
+		return licensePlate;
+	}
+	public void setLicensePlate(String licensePlate) {
+		this.licensePlate = licensePlate;
+	}
+	public List<Viaggio> getViaggi() {
+		return viaggi;
+	}
+	public void setViaggi(List<Viaggio> viaggi) {
+		this.viaggi = viaggi;
 	}
 	
 	

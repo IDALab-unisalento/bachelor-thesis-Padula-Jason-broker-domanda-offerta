@@ -22,7 +22,7 @@ public class Affittuario extends User {
 	Date abilitationDate;
 	
 	@OneToMany(mappedBy = "affittuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<AffittuarioPrenotaVectorRoute> prenotazioniList;
+	List<AffittuarioPrenotaViaggioRoute> prenotazioniList;
 	
 
 	public String getSurname() {
@@ -62,10 +62,10 @@ public class Affittuario extends User {
 	public void setAbilitationDate(Date abilitationDate) {
 		this.abilitationDate = abilitationDate;
 	}
-	public List<AffittuarioPrenotaVectorRoute> getPrenotazioniList() {
+	public List<AffittuarioPrenotaViaggioRoute> getPrenotazioniList() {
 		return prenotazioniList;
 	}
-	public void setPrenotazioniList(List<AffittuarioPrenotaVectorRoute> prenotazioniList) {
+	public void setPrenotazioniList(List<AffittuarioPrenotaViaggioRoute> prenotazioniList) {
 		this.prenotazioniList = prenotazioniList;
 	}
 

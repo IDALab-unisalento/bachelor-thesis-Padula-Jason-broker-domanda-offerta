@@ -1,17 +1,18 @@
 package it.unisalento.brokerapp.DTOclasses;
 
-import java.sql.Date;
+import java.util.Date;
 
-public class VectorRouteDTO {
+public class ViaggioRouteDTO {
 
 	Integer id;
-	Integer vectorId;
+	Integer viaggioId;
 	Integer routeId;
 	
 	Date  startDate;
 	Date  endDate;
 	float availableCapacity;
 	
+	 
 	public Integer getId() {
 		return id;
 	}
@@ -20,23 +21,18 @@ public class VectorRouteDTO {
 	}
 
 
-	public Integer getVectorId() {
-		return vectorId;
+
+	public Integer getViaggioId() {
+		return viaggioId;
 	}
-	public void setVectorId(Integer vectorId) {
-		this.vectorId = vectorId;
+	public void setViaggioId(Integer viaggioId) {
+		this.viaggioId = viaggioId;
 	}
 	public Integer getRouteId() {
 		return routeId;
 	}
 	public void setRouteId(Integer routeId) {
 		this.routeId = routeId;
-	}
-	public float getAvailableCapacity() {
-		return availableCapacity;
-	}
-	public void setAvailableCapacity(float availableCapacity) {
-		this.availableCapacity = availableCapacity;
 	}
 	public Date getStartDate() {
 		return startDate;
@@ -49,6 +45,12 @@ public class VectorRouteDTO {
 	}
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
+	}
+	public float getAvailableCapacity() {
+		return availableCapacity;
+	}
+	public void setAvailableCapacity(float availableCapacity) {
+		this.availableCapacity = availableCapacity;
 	}
 
 	

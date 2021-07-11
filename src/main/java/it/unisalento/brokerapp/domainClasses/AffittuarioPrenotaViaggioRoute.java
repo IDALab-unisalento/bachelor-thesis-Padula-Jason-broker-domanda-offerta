@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class AffittuarioPrenotaVectorRoute {
+public class AffittuarioPrenotaViaggioRoute {
 
 	
 
@@ -19,7 +19,7 @@ public class AffittuarioPrenotaVectorRoute {
 	Affittuario affittuario;
 	
 	@ManyToOne(optional = false)
-	VectorRoute vectorRoute;
+	ViaggioRoute viaggioRoute;
 	
 	float bookedCapacity;
 
@@ -31,7 +31,6 @@ public class AffittuarioPrenotaVectorRoute {
 		this.id = id;
 	}
 
-
 	public Affittuario getAffittuario() {
 		return affittuario;
 	}
@@ -40,12 +39,12 @@ public class AffittuarioPrenotaVectorRoute {
 		this.affittuario = affittuario;
 	}
 
-	public VectorRoute getVectorRoute() {
-		return vectorRoute;
+	public ViaggioRoute getViaggioRoute() {
+		return viaggioRoute;
 	}
 
-	public void setVectorRoute(VectorRoute vectorRoute) {
-		this.vectorRoute = vectorRoute;
+	public void setViaggioRoute(ViaggioRoute viaggioRoute) {
+		this.viaggioRoute = viaggioRoute;
 	}
 
 	public float getBookedCapacity() {
@@ -55,6 +54,7 @@ public class AffittuarioPrenotaVectorRoute {
 	public void setBookedCapacity(float bookedCapacity) {
 		this.bookedCapacity = bookedCapacity;
 	}
+
 
 
 }

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.unisalento.brokerapp.domainClasses.CompanyVector;
-import it.unisalento.brokerapp.exceptions.VectorRouteNotFoundException;
+import it.unisalento.brokerapp.exceptions.ViaggioRouteNotFoundException;
 import it.unisalento.brokerapp.exceptions.CompanyNotFoundException;
 import it.unisalento.brokerapp.exceptions.CompanyVectorNotFoundException;
 import it.unisalento.brokerapp.exceptions.SavingCompanyVectorException;
@@ -65,7 +65,7 @@ public class CompanyVectorServiceImpl implements ICompanyVectorService{
 	
 	
 	@Override
-	@Transactional(rollbackOn = VectorRouteNotFoundException.class)
+	@Transactional(rollbackOn = ViaggioRouteNotFoundException.class)
 	public List<CompanyVector> findByCompanyId(int companyId) throws CompanyNotFoundException {
 		try {
 			return companyVectorRepository.findByCompanyId(companyId);
@@ -78,7 +78,7 @@ public class CompanyVectorServiceImpl implements ICompanyVectorService{
 	
 	
 	@Override
-	@Transactional(rollbackOn = VectorRouteNotFoundException.class)
+	@Transactional(rollbackOn = ViaggioRouteNotFoundException.class)
 	public List<CompanyVector> findByVectorId(int vectorId) throws VectorNotFoundException {
 		try {
 			return companyVectorRepository.findByVectorId(vectorId);
