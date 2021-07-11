@@ -6,7 +6,6 @@ public class CompanyVectorDTO {
 	Integer id;
 	Integer companyId;
 	Integer vectorId;
-	float 	initialFreeCapacity;
 	
 	public Integer getId() {
 		return id;
@@ -26,12 +25,6 @@ public class CompanyVectorDTO {
 	}
 	public void setVectorId(Integer vectorId) {
 		this.vectorId = vectorId;
-	}
-	public float getInitialFreeCapacity() {
-		return initialFreeCapacity;
-	}
-	public void setInitialFreeCapacity(float initialFreeCapacity) {
-		this.initialFreeCapacity = initialFreeCapacity;
 	}
 
 	

@@ -21,7 +21,6 @@ public class CompanyVector {
 	Vector vector;
 
 	
-	float 	initialFreeCapacity;
 
 	
 	public Integer getId() {
@@ -49,13 +48,6 @@ public class CompanyVector {
 		this.vector = vector;
 	}
 
-	public float getInitialFreeCapacity() {
-		return initialFreeCapacity;
-	}
-
-	public void setInitialFreeCapacity(float initialFreeCapacity) {
-		this.initialFreeCapacity = initialFreeCapacity;
-	}
 	
 	
 	

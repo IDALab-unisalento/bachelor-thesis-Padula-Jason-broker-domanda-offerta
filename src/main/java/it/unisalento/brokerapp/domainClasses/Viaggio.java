@@ -14,7 +14,8 @@ public class Viaggio {
 	Integer id;
 
 
-	
+	float 	initialFreeCapacity;
+
 	@ManyToOne(optional = true)
 	Vector vector;
 
@@ -40,6 +41,18 @@ public class Viaggio {
 
 	public void setVector(Vector vector) {
 		this.vector = vector;
+	}
+
+
+
+	public float getInitialFreeCapacity() {
+		return initialFreeCapacity;
+	}
+
+
+
+	public void setInitialFreeCapacity(float initialFreeCapacity) {
+		this.initialFreeCapacity = initialFreeCapacity;
 	}
 
 

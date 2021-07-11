@@ -21,12 +21,10 @@ import it.unisalento.brokerapp.DTOclasses.ViaggioRouteDTO;
 import it.unisalento.brokerapp.domainClasses.ViaggioRoute;
 import it.unisalento.brokerapp.exceptions.ViaggioRouteNotFoundException;
 import it.unisalento.brokerapp.exceptions.SavingViaggioRouteException;
-import it.unisalento.brokerapp.exceptions.VectorNotFoundException;
 import it.unisalento.brokerapp.exceptions.ViaggioNotFoundException;
 import it.unisalento.brokerapp.exceptions.RouteNotFoundException;
 import it.unisalento.brokerapp.iservices.IViaggioRouteService;
 import it.unisalento.brokerapp.iservices.IViaggioService;
-import it.unisalento.brokerapp.iservices.IVectorService;
 import it.unisalento.brokerapp.iservices.IRouteService;
 
 @RestController

@@ -1,11 +1,11 @@
 package it.unisalento.brokerapp.DTOclasses;
 
-import java.util.Date;
 
 public class ViaggioDTO {
 
 	Integer id;
-	
+	float 	initialFreeCapacity;
+
 
 	Integer vectorId;
 	
@@ -22,8 +22,15 @@ public class ViaggioDTO {
 	public void setVectorId(Integer vectorId) {
 		this.vectorId = vectorId;
 	}
+	public float getInitialFreeCapacity() {
+		return initialFreeCapacity;
+	}
+	public void setInitialFreeCapacity(float initialFreeCapacity) {
+		this.initialFreeCapacity = initialFreeCapacity;
+	}
 
 
+	
 	
 	
 }
