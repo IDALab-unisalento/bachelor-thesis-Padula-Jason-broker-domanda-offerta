@@ -8,4 +8,6 @@ import it.unisalento.brokerapp.domainClasses.Vector;
 @Repository
 public interface VectorRepository extends JpaRepository<Vector, Integer>{
 
+	public Vector findByLicensePlate(String licensePlate);
+
 }

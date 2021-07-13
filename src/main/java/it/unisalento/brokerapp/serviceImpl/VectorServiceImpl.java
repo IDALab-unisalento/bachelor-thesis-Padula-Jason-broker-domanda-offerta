@@ -57,6 +57,16 @@ public class VectorServiceImpl implements IVectorService{
 		return true;
 	}
 	
+	@Override
+	@Transactional(rollbackOn = VectorNotFoundException.class)
+
+	public Vector findByLicensePlate(String licensePlate) throws VectorNotFoundException {
+		try {
+			return vectorRepository.findByLicensePlate(licensePlate);
+		} catch (Exception e) {
+			throw new VectorNotFoundException();
+		}
+	}
 	
 
 }
