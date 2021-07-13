@@ -9,8 +9,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToOne; 
 import javax.persistence.OneToMany;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class ViaggioRoute {
@@ -27,6 +31,7 @@ public class ViaggioRoute {
 
 	float availableCapacity; // questo è il peso che sarà da aggiungere alla disponibilità dell'companyVector
 	
+
 	Date startDate;
 	Date endDate;
 	

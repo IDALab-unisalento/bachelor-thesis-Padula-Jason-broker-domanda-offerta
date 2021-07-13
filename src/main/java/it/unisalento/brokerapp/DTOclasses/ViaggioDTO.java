@@ -5,7 +5,7 @@ public class ViaggioDTO {
 
 	Integer id;
 	float 	initialFreeCapacity;
-
+	float 	costoPerKm;
 
 	Integer vectorId;
 	
@@ -28,6 +28,18 @@ public class ViaggioDTO {
 	public void setInitialFreeCapacity(float initialFreeCapacity) {
 		this.initialFreeCapacity = initialFreeCapacity;
 	}
+
+
+	public float getCostoPerKm() {
+		return costoPerKm;
+	}
+
+
+
+	public void setCostoPerKm(float costoPerKm) {
+		this.costoPerKm = costoPerKm;
+	}
+
 
 
 	

@@ -8,6 +8,7 @@ public class ViaggioRouteDTO {
 	Integer viaggioId;
 	Integer routeId;
 	
+	
 	Date  startDate;
 	Date  endDate;
 	float availableCapacity;
