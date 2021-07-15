@@ -75,7 +75,7 @@ public class CompanyRestController {
 		Company  company = new Company();
 		
 		company = modelMapper.map(companyDTO, Company.class);
-		
+		company.setDisabilitated(true);
 		Company companySaved = companyService.save(company);	
 		companyDTO.setId(companySaved.getId());
 		

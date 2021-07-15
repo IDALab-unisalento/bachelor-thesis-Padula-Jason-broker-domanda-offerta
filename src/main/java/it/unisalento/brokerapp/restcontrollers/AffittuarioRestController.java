@@ -75,7 +75,8 @@ public class AffittuarioRestController {
 		Affittuario  affittuario = new Affittuario();
 		
 		affittuario = modelMapper.map(affittuarioDTO, Affittuario.class);
-		
+		affittuario.setDisabilitated(true);
+
 		Affittuario affittuarioSaved = affittuarioService.save(affittuario);	
 		affittuarioDTO.setId(affittuarioSaved.getId());
 		
