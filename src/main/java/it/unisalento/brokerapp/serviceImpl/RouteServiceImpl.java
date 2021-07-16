@@ -69,4 +69,10 @@ public class RouteServiceImpl implements IRouteService{
 		routeRepository.delete(route);
 		return true;
 	}
+
+	@Override
+	@Transactional(rollbackOn = RouteNotFoundException.class)
+	public List<Route> findAllRouteOfViaggioId(int viaggioId) {
+		return routeRepository.findAllRouteOfViaggioId(viaggioId);
+	}
 }

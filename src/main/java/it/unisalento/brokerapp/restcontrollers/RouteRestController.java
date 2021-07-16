@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -80,7 +81,21 @@ public class RouteRestController {
 		
 		return treatsDTOList;
 	}
+	
+	
+	@GetMapping(value="/getRoutes/{viaggioId}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<RouteDTO> getAllRoutesOfViaggioId(@PathVariable int viaggioId){
+		List<Route> 	allRoutes = routeService.findAllRouteOfViaggioId(viaggioId);
+		List<RouteDTO> allRoutesDTO = new ArrayList<RouteDTO>(); 
+		for (Route route :allRoutes) {
+			
+			RouteDTO routeDTO = modelMapper.map(route, RouteDTO.class);
 
+			allRoutesDTO.add(routeDTO);
+		}
+		return allRoutesDTO;
+		
+	}
 	
 //	SALVO UN ALLEGATO
 	@PostMapping(value="/save", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)

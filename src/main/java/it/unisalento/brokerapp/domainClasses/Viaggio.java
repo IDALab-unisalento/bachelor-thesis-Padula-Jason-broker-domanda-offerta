@@ -20,6 +20,28 @@ public class Viaggio {
 	@ManyToOne(optional = true)
 	Vector vector;
 
+	@ManyToOne(optional = true)
+	User company;
+
+
+	@Override
+	public String toString() {
+		return "Viaggio [id=" + id + ", initialFreeCapacity=" + initialFreeCapacity + ", costoPerKm=" + costoPerKm
+				+ ", vector=" + vector + ", company=" + company + "]";
+	}
+
+
+
+	public User getCompany() {
+		return company;
+	}
+
+
+
+	public void setCompany(User company) {
+		this.company = company;
+	}
+
 
 
 	public Integer getId() {

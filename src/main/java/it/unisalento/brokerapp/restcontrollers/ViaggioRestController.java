@@ -54,12 +54,11 @@ public class ViaggioRestController {
 	public List<ViaggioDTO> getAll(){
 		
 		List<Viaggio> 	viaggiList = viaggioService.getAll();
+	
 		List<ViaggioDTO> viaggiDTOList = new ArrayList<ViaggioDTO>(); 
 		
 		for (Viaggio viaggio : viaggiList) {
-			
 			ViaggioDTO viaggioDTO = modelMapper.map(viaggio, ViaggioDTO.class);
-
 			viaggiDTOList.add(viaggioDTO);
 		}
 		

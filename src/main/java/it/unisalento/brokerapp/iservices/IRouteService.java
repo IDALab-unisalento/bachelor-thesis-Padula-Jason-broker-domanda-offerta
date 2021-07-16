@@ -19,4 +19,5 @@ public interface IRouteService {
 
 	public Route getByStartCityAndEndCity(String startCity, String endCity) throws RouteNotFoundException;
  
+	public List<Route> findAllRouteOfViaggioId (int viaggioId);
 }
