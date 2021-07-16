@@ -43,6 +43,18 @@ public class RouteServiceImpl implements IRouteService{
 	}
 	
 	@Override
+	@Transactional(rollbackOn = RouteNotFoundException.class) //rollback mi permette di ritornare al punto prima della transazione quando va male
+	public Route getByStartCityAndEndCity(String startCity, String endCity) throws RouteNotFoundException {
+		
+		try {
+			return routeRepository.findByStartCityAndEndCity(startCity,endCity);
+
+		} catch (Exception e) {
+			throw new RouteNotFoundException();
+		}
+	}
+	
+	@Override
 	@Transactional
 	public List<Route> getAll() {
 		

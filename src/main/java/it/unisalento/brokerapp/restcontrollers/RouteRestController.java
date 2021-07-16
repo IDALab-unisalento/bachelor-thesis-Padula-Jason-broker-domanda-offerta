@@ -47,6 +47,21 @@ public class RouteRestController {
 		return routeDTO;
 	}
 	
+
+//	RICERCO UNA route avendo le due città
+	@RequestMapping(value="/getByStartCityAndEndCity/{startCity}/{endCity}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public RouteDTO getByStartCityAndEndCity(@PathVariable String startCity,@PathVariable String endCity) throws RouteNotFoundException{
+		
+		Route route = routeService.getByStartCityAndEndCity(startCity,endCity);
+		
+		// Abbiamo un oggetto IUserDTO da mappare in un oggetto userDTO
+		RouteDTO routeDTO = modelMapper.map(route, RouteDTO.class);
+
+		
+		return routeDTO;
+	}
+	
+	
 	
 //	RICERCO TUTTI GLI ALLEGATI
 	@RequestMapping(value="/getAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

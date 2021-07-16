@@ -15,6 +15,7 @@ public class Viaggio {
 
 
 	float 	initialFreeCapacity;
+	float 	costoPerKm;
 
 	@ManyToOne(optional = true)
 	Vector vector;
@@ -53,6 +54,18 @@ public class Viaggio {
 
 	public void setInitialFreeCapacity(float initialFreeCapacity) {
 		this.initialFreeCapacity = initialFreeCapacity;
+	}
+
+
+
+	public float getCostoPerKm() {
+		return costoPerKm;
+	}
+
+
+
+	public void setCostoPerKm(float costoPerKm) {
+		this.costoPerKm = costoPerKm;
 	}
 
 

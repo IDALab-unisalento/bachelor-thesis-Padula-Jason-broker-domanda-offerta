@@ -17,4 +17,6 @@ public interface IRouteService {
 
     boolean delete (int id) throws RouteNotFoundException,IllegalArgumentException;
 
+	public Route getByStartCityAndEndCity(String startCity, String endCity) throws RouteNotFoundException;
+ 
 }

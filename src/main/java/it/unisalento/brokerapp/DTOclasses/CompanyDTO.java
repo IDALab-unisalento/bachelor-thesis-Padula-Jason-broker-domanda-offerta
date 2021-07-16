@@ -7,7 +7,6 @@ public class CompanyDTO extends UserDTO {
 	String webSite;
 	String phoneNumber;
 	String headquarters;
-	String jobSector;
 	String legalForm;
 	String iva;
 	boolean disabilitated;
@@ -31,12 +30,7 @@ public class CompanyDTO extends UserDTO {
 	public void setHeadquarters(String headquarters) {
 		this.headquarters = headquarters;
 	}
-	public String getJobSector() {
-		return jobSector;
-	}
-	public void setJobSector(String jobSector) {
-		this.jobSector = jobSector;
-	}
+
 	public String getLegalForm() {
 		return legalForm;
 	}

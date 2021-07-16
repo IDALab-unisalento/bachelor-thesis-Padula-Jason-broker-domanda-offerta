@@ -17,4 +17,6 @@ public interface IVectorService {
 
 	public boolean delete (int id) throws VectorNotFoundException,IllegalArgumentException;
 
+	public Vector findByLicensePlate(String licensePlate) throws VectorNotFoundException;
+
 }

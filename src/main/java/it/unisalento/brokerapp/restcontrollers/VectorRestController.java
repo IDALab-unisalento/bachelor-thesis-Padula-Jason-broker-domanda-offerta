@@ -91,4 +91,15 @@ public class VectorRestController {
 		
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+	// CERCO UN'AZIENDA DALLA TARGA
+	@RequestMapping(value="/getByLicensePlate/{targa}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public VectorDTO getByLicensePlate(@PathVariable String targa) throws VectorNotFoundException{
+		
+		Vector vector = vectorService.findByLicensePlate(targa);
+	
+		VectorDTO vectorDTO = modelMapper.map(vector, VectorDTO.class);
+		
+		return vectorDTO;
+	}
 }
