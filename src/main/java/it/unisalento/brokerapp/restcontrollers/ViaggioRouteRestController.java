@@ -157,7 +157,7 @@ public class ViaggioRouteRestController {
 		ViaggioRoute viaggioRoute = viaggioRouteService.findByViaggioIdAndRouteId(viaggioId,routeId);
 		
 		// Abbiamo un oggetto IUserDTO da mappare in un oggetto userDTO
-		
+		//j
 		ViaggioRouteDTO viaggioRouteDTO = modelMapper.map(viaggioRoute, ViaggioRouteDTO.class);
 		
 		
