@@ -97,4 +97,11 @@ public class ViaggioRouteServiceImpl implements IViaggioRouteService{
 		
 	}
 
+	@Override
+	@Transactional(rollbackOn = ViaggioRouteNotFoundException.class)
+
+	public int updateCapacityByViaggioRouteId(double capacity, int viaggioRouteId) {
+		return viaggioRouteRepository.updateCapacityByViaggioRouteId(capacity, viaggioRouteId);
+	}
+
 }

@@ -25,5 +25,8 @@ public interface IViaggioRouteService {
 	public List<ViaggioRoute> findByRouteId(int routeId) throws RouteNotFoundException;
 
 	public ViaggioRoute findByViaggioIdAndRouteId(int viaggioId, int routeId) throws ViaggioRouteNotFoundException; 
+	
+	public int updateCapacityByViaggioRouteId(double capacity, int viaggioRouteId);
+
 
 }
