@@ -19,5 +19,9 @@ public interface RouteRepository extends JpaRepository<Route, Integer>{
 			+ ")\r\n"
 			+ "", nativeQuery=true)
 	public List<Route> findAllRouteOfViaggioId (int viaggioId);
+	
+	
+	@Query(value="SELECT * FROM brokerappdb.route where LOWER(end_city) like LOWER(?1)", nativeQuery=true)
+	public List<Route> findByEndCity(String endCity);
 
 }
