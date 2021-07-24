@@ -22,6 +22,8 @@ public class Vector {
 	int capacity; //kg trasportabili
 	String brand; // marca
 	String licensePlate;
+	Boolean frozenProduct;
+	Boolean biomedicalProducts;
 	
 	@OneToMany(mappedBy = "vector", targetEntity = CompanyVector.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<CompanyVector> companyVectorList;
@@ -70,6 +72,18 @@ public class Vector {
 	}
 	public void setViaggi(List<Viaggio> viaggi) {
 		this.viaggi = viaggi;
+	}
+	public Boolean getFrozenProduct() {
+		return frozenProduct;
+	}
+	public void setFrozenProduct(Boolean frozenProduct) {
+		this.frozenProduct = frozenProduct;
+	}
+	public Boolean getBiomedicalProducts() {
+		return biomedicalProducts;
+	}
+	public void setBiomedicalProducts(Boolean biomedicalProducts) {
+		this.biomedicalProducts = biomedicalProducts;
 	}
 	
 	

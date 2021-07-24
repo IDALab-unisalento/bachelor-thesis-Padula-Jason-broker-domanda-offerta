@@ -132,7 +132,7 @@ public class AffittuarioPrenotaViaggioRouteRestController {
 //	CERCO TUTTE LE RELAZIONI ATTRIBUTO-STRUTTURA DALL'id DELLA STRUTTURA
 //  Esempio: Voglio sapere tutti gli attributi possibili della struttura con id : 1
 	@RequestMapping(value="/getByViaggioRouteId/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<AffittuarioPrenotaViaggioRouteDTO> getByVectorRouteId(@PathVariable int id) throws UserPrenotaViaggioRouteNotFoundException, ViaggioRouteNotFoundException{
+	public List<AffittuarioPrenotaViaggioRouteDTO> getByViaggioRouteId(@PathVariable int id) throws UserPrenotaViaggioRouteNotFoundException, ViaggioRouteNotFoundException{
 		
 		List<AffittuarioPrenotaViaggioRoute> 	prenotazioniList = prenotazioneService.findByViaggioRouteId(id);
 		List<AffittuarioPrenotaViaggioRouteDTO> prenotazioniDTOList = new ArrayList<AffittuarioPrenotaViaggioRouteDTO>(); 
