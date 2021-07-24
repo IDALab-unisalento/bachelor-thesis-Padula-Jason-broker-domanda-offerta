@@ -7,6 +7,8 @@ public class VectorDTO {
 	String brand;
 	int capacity; //kg trasportabili
 	String licensePlate; 
+	Boolean frozenProduct;
+	Boolean biomedicalProducts; 
 	
 	public Integer getId() {
 		return id;
@@ -37,6 +39,18 @@ public class VectorDTO {
 	}
 	public void setLicensePlate(String licensePlate) {
 		this.licensePlate = licensePlate;
+	}
+	public Boolean getFrozenProduct() {
+		return frozenProduct;
+	}
+	public void setFrozenProduct(Boolean frozenProduct) {
+		this.frozenProduct = frozenProduct;
+	}
+	public Boolean getBiomedicalProducts() {
+		return biomedicalProducts;
+	}
+	public void setBiomedicalProducts(Boolean biomedicalProducts) {
+		this.biomedicalProducts = biomedicalProducts;
 	}
 	
 	
