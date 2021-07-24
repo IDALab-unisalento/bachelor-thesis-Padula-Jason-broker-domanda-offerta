@@ -63,6 +63,8 @@ public class RouteRestController {
 	@RequestMapping(value = "/getByStartCityAndEndCity/{startCity}/{endCity}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public RouteDTO getByStartCityAndEndCity(@PathVariable String startCity, @PathVariable String endCity)
 			throws RouteNotFoundException {
+		startCity=startCity.toLowerCase();
+		endCity=endCity.toLowerCase();
 		
 		Route route = routeService.getByStartCityAndEndCity(startCity, endCity);
 
