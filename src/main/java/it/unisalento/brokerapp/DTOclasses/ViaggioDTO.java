@@ -9,6 +9,8 @@ public class ViaggioDTO {
 
 	Integer vectorId;
 	Integer companyId;
+	String maximumWithdrawal;
+
 	
 	public Integer getCompanyId() {
 		return companyId;
@@ -45,6 +47,12 @@ public class ViaggioDTO {
 
 	public void setCostoPerKm(float costoPerKm) {
 		this.costoPerKm = costoPerKm;
+	}
+	public String getMaximumWithdrawal() {
+		return maximumWithdrawal;
+	}
+	public void setMaximumWithdrawal(String maximumWithdrawal) {
+		this.maximumWithdrawal = maximumWithdrawal;
 	}
 
 

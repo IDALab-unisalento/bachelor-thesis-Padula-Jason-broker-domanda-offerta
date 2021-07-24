@@ -11,6 +11,8 @@ public class ViaggioRouteDTO {
 	
 	Date  startDate;
 	Date  endDate;
+	Date  maximumWithdrawal;
+
 	float availableCapacity;
 	
 	 
@@ -52,6 +54,12 @@ public class ViaggioRouteDTO {
 	}
 	public void setAvailableCapacity(float availableCapacity) {
 		this.availableCapacity = availableCapacity;
+	}
+	public Date getMaximumWithdrawal() {
+		return maximumWithdrawal;
+	}
+	public void setMaximumWithdrawal(Date maximumWithdrawal) {
+		this.maximumWithdrawal = maximumWithdrawal;
 	}
 
 	
