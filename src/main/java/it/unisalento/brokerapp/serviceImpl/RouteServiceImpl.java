@@ -75,4 +75,9 @@ public class RouteServiceImpl implements IRouteService{
 	public List<Route> findAllRouteOfViaggioId(int viaggioId) {
 		return routeRepository.findAllRouteOfViaggioId(viaggioId);
 	}
+
+	@Override
+	public List<Route> findByEndCity(String endCity) {
+		return routeRepository.findByEndCity(endCity);
+	}
 }

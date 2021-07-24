@@ -24,8 +24,6 @@ import it.unisalento.brokerapp.exceptions.SavingRouteException;
 import it.unisalento.brokerapp.exceptions.RouteNotFoundException;
 import it.unisalento.brokerapp.iservices.IRouteService;
 
-
-
 @RestController
 @RequestMapping("/route")
 public class RouteRestController {
@@ -35,92 +33,97 @@ public class RouteRestController {
 
 	private ModelMapper modelMapper = new ModelMapper();
 
+	@GetMapping(value = "/getByEndCity/{endCity}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<RouteDTO> findByEndCity(@PathVariable String endCity) {
+		List<Route> routes = routeService.findByEndCity(endCity);
+		List<RouteDTO> routesDTO = new ArrayList<RouteDTO>();
+		for (Route route : routes) {
+
+			RouteDTO routeDTO = modelMapper.map(route, RouteDTO.class);
+
+			routesDTO.add(routeDTO);
+		}
+
+		return routesDTO;
+	}
+
 //	RICERCO UN ALLEGATO PER ID
-	@RequestMapping(value="/get/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public RouteDTO get(@PathVariable int id) throws RouteNotFoundException{
-		
+	@RequestMapping(value = "/get/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public RouteDTO get(@PathVariable int id) throws RouteNotFoundException {
+
 		Route route = routeService.getById(id);
-		
+
 		// Abbiamo un oggetto IUserDTO da mappare in un oggetto userDTO
 		RouteDTO routeDTO = modelMapper.map(route, RouteDTO.class);
 
-		
 		return routeDTO;
 	}
-	
 
 //	RICERCO UNA route avendo le due città
-	@RequestMapping(value="/getByStartCityAndEndCity/{startCity}/{endCity}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public RouteDTO getByStartCityAndEndCity(@PathVariable String startCity,@PathVariable String endCity) throws RouteNotFoundException{
+	@RequestMapping(value = "/getByStartCityAndEndCity/{startCity}/{endCity}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public RouteDTO getByStartCityAndEndCity(@PathVariable String startCity, @PathVariable String endCity)
+			throws RouteNotFoundException {
 		
-		Route route = routeService.getByStartCityAndEndCity(startCity,endCity);
-		
+		Route route = routeService.getByStartCityAndEndCity(startCity, endCity);
+
 		// Abbiamo un oggetto IUserDTO da mappare in un oggetto userDTO
 		RouteDTO routeDTO = modelMapper.map(route, RouteDTO.class);
 
-		
 		return routeDTO;
 	}
-	
-	
-	
+
 //	RICERCO TUTTI GLI ALLEGATI
-	@RequestMapping(value="/getAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<RouteDTO> getAll(){
-		
-		List<Route> 	treatsList = routeService.getAll();
-		List<RouteDTO> treatsDTOList = new ArrayList<RouteDTO>(); 
-		
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<RouteDTO> getAll() {
+
+		List<Route> treatsList = routeService.getAll();
+		List<RouteDTO> treatsDTOList = new ArrayList<RouteDTO>();
+
 		for (Route route : treatsList) {
-			
+
 			RouteDTO routeDTO = modelMapper.map(route, RouteDTO.class);
 
 			treatsDTOList.add(routeDTO);
 		}
-		
-		
+
 		return treatsDTOList;
 	}
-	
-	
-	@GetMapping(value="/getRoutes/{viaggioId}", produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<RouteDTO> getAllRoutesOfViaggioId(@PathVariable int viaggioId){
-		List<Route> 	allRoutes = routeService.findAllRouteOfViaggioId(viaggioId);
-		List<RouteDTO> allRoutesDTO = new ArrayList<RouteDTO>(); 
-		for (Route route :allRoutes) {
-			
+
+	@GetMapping(value = "/getRoutes/{viaggioId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<RouteDTO> getAllRoutesOfViaggioId(@PathVariable int viaggioId) {
+		List<Route> allRoutes = routeService.findAllRouteOfViaggioId(viaggioId);
+		List<RouteDTO> allRoutesDTO = new ArrayList<RouteDTO>();
+		for (Route route : allRoutes) {
+
 			RouteDTO routeDTO = modelMapper.map(route, RouteDTO.class);
 
 			allRoutesDTO.add(routeDTO);
 		}
 		return allRoutesDTO;
-		
+
 	}
-	
+
 //	SALVO UN ALLEGATO
-	@PostMapping(value="/save", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/save", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public RouteDTO save(@RequestBody @Valid RouteDTO routeDTO) throws SavingRouteException {
-		
-		
-		Route  route = new Route();
-		
+
+		Route route = new Route();
+
 		route = modelMapper.map(routeDTO, Route.class);
-		
-		Route treatsSaved = routeService.save(route);	
+
+		Route treatsSaved = routeService.save(route);
 		routeDTO.setId(treatsSaved.getId());
-		
+
 		return routeDTO;
-		
+
 	}
-	
-    
 
 //	RIMUOVO UN ALLEGATO
 	@RequestMapping(value = "/remove/{id}", method = RequestMethod.DELETE)
-	public  ResponseEntity<Route> delete(@PathVariable int id ) throws RouteNotFoundException{
-		
+	public ResponseEntity<Route> delete(@PathVariable int id) throws RouteNotFoundException {
+
 		routeService.delete(id);
-		
+
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }
