@@ -8,7 +8,7 @@ public class VectorDTO {
 	int capacity; //kg trasportabili
 	String licensePlate; 
 	Boolean frozenProduct;
-	Boolean biomedicalProducts;
+	Boolean biomedicalProducts; 
 	
 	public Integer getId() {
 		return id;
