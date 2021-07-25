@@ -1,5 +1,7 @@
 package it.unisalento.brokerapp.DTOclasses;
 
+import java.util.Date;
+
 public class AffittuarioPrenotaViaggioRouteDTO {
 
 	
@@ -7,6 +9,7 @@ public class AffittuarioPrenotaViaggioRouteDTO {
 	Integer affittuarioId;
 	Integer viaggioRouteId;
 	float   bookedCapacity; // capacità prenotata in Kg
+	Date    prenotationDate;
 	
 	public Integer getId() {
 		return id;
@@ -35,7 +38,14 @@ public class AffittuarioPrenotaViaggioRouteDTO {
 		this.bookedCapacity = bookedCapacity;
 	}
 
-	
+	public Date getPrenotationDate() {
+		return prenotationDate;
+	}
+
+	public void setPrenotationDate(Date prenotationDate) {
+		this.prenotationDate = prenotationDate;
+	}
+
 	
 	
 	

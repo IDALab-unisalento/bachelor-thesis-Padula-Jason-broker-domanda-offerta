@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import it.unisalento.brokerapp.domainClasses.Viaggio;
 import it.unisalento.brokerapp.exceptions.SavingViaggioException;
+import it.unisalento.brokerapp.exceptions.UserNotFoundException;
 import it.unisalento.brokerapp.exceptions.VectorNotFoundException;
 import it.unisalento.brokerapp.exceptions.ViaggioNotFoundException;
 import it.unisalento.brokerapp.iservices.IViaggioService;
@@ -68,6 +69,17 @@ public class ViaggioServiceImpl implements IViaggioService{
 
 		} catch (Exception e) {
 			throw new VectorNotFoundException();
+		}
+	}
+	
+	@Override
+	@Transactional
+	public List<Viaggio> findByCompanyId(int companyId) throws UserNotFoundException {
+		try {
+			return viaggioRepository.findByCompanyId(companyId);
+
+		} catch (Exception e) {
+			throw new UserNotFoundException();
 		}
 	}
 }

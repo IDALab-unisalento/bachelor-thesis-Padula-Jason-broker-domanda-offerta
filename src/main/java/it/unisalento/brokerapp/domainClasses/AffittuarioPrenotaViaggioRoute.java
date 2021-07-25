@@ -1,5 +1,7 @@
 package it.unisalento.brokerapp.domainClasses;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +24,7 @@ public class AffittuarioPrenotaViaggioRoute {
 	ViaggioRoute viaggioRoute;
 	
 	float bookedCapacity;
+	Date prenotationDate;
 
 	public Integer getId() {
 		return id;
@@ -53,6 +56,14 @@ public class AffittuarioPrenotaViaggioRoute {
 
 	public void setBookedCapacity(float bookedCapacity) {
 		this.bookedCapacity = bookedCapacity;
+	}
+
+	public Date getPrenotationDate() {
+		return prenotationDate;
+	}
+
+	public void setPrenotationDate(Date prenotationDate) {
+		this.prenotationDate = prenotationDate;
 	}
 
 
