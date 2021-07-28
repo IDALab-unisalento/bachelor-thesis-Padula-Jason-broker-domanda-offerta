@@ -10,5 +10,8 @@ import it.unisalento.brokerapp.domainClasses.Viaggio;
 public interface ViaggioRepository extends JpaRepository<Viaggio, Integer>{
 
 	public List<Viaggio> findByVectorId(int viaggioId);
+	
+    public List<Viaggio> findByCompanyId(int companyId);
+
 
 }

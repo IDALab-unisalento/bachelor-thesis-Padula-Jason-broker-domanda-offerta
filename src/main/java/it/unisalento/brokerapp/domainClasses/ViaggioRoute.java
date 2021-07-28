@@ -34,6 +34,7 @@ public class ViaggioRoute {
 
 	Date startDate;
 	Date endDate;
+	Date maximumWithdrawal;
 	
 	@OneToMany(mappedBy = "viaggioRoute", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<AffittuarioPrenotaViaggioRoute> prenotazioniList;
@@ -92,6 +93,14 @@ public class ViaggioRoute {
 
 	public void setPrenotazioniList(List<AffittuarioPrenotaViaggioRoute> prenotazioniList) {
 		this.prenotazioniList = prenotazioniList;
+	}
+
+	public Date getMaximumWithdrawal() {
+		return maximumWithdrawal;
+	}
+
+	public void setMaximumWithdrawal(Date maximumWithdrawal) {
+		this.maximumWithdrawal = maximumWithdrawal;
 	}
 	
 	

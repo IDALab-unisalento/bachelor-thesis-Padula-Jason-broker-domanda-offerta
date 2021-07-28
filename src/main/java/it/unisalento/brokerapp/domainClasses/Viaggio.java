@@ -1,5 +1,7 @@
 package it.unisalento.brokerapp.domainClasses;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +18,7 @@ public class Viaggio {
 
 	float 	initialFreeCapacity;
 	float 	costoPerKm;
-
+	String  maximumWithdrawal;
 	@ManyToOne(optional = true)
 	Vector vector;
 
@@ -90,6 +92,17 @@ public class Viaggio {
 		this.costoPerKm = costoPerKm;
 	}
 
+
+
+	public String getMaximumWithdrawal() {
+		return maximumWithdrawal;
+	}
+
+
+
+	public void setMaximumWithdrawal(String maximumWithdrawal) {
+		this.maximumWithdrawal = maximumWithdrawal;
+	}
 
 	
 

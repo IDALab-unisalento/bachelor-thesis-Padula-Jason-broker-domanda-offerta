@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import it.unisalento.brokerapp.DTOclasses.ViaggioDTO;
 import it.unisalento.brokerapp.domainClasses.Viaggio;
 import it.unisalento.brokerapp.exceptions.SavingViaggioException;
+import it.unisalento.brokerapp.exceptions.UserNotFoundException;
 import it.unisalento.brokerapp.exceptions.VectorNotFoundException;
 import it.unisalento.brokerapp.exceptions.ViaggioNotFoundException;
 import it.unisalento.brokerapp.iservices.IViaggioService;
@@ -100,6 +101,25 @@ public class ViaggioRestController {
 	public List<ViaggioDTO> getByVector(@PathVariable int id) throws VectorNotFoundException{
 		
 		List<Viaggio> 	viaggiList = viaggioService.findByVectorId(id);
+		List<ViaggioDTO> viaggiDTOList = new ArrayList<ViaggioDTO>(); 
+		
+		for (Viaggio viaggio : viaggiList) {
+			
+			ViaggioDTO viaggioDTO = modelMapper.map(viaggio, ViaggioDTO.class);
+
+			viaggiDTOList.add(viaggioDTO);
+		}
+		
+		
+		return viaggiDTOList;
+	}
+	
+	
+//	RICERCO TUTTI I VIAGGI per company
+	@RequestMapping(value="/getByCompany/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<ViaggioDTO> getByCompany(@PathVariable int id) throws UserNotFoundException{
+		
+		List<Viaggio> 	viaggiList = viaggioService.findByCompanyId(id);
 		List<ViaggioDTO> viaggiDTOList = new ArrayList<ViaggioDTO>(); 
 		
 		for (Viaggio viaggio : viaggiList) {
