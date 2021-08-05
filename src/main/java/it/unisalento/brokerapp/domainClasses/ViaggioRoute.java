@@ -34,8 +34,17 @@ public class ViaggioRoute {
 
 	Date startDate;
 	Date endDate;
-	Date maximumWithdrawal;
+	Date maximumWithdrawal; //data masisma entro la quale cancellare la prenotazione
+	Date maximumBookingDate; //data entro la quel è possibile FARE la prenotazione
 	
+	public Date getMaximumBookingDate() {
+		return maximumBookingDate;
+	}
+
+	public void setMaximumBookingDate(Date maximumBookingDate) {
+		this.maximumBookingDate = maximumBookingDate;
+	}
+
 	@OneToMany(mappedBy = "viaggioRoute", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<AffittuarioPrenotaViaggioRoute> prenotazioniList;
 

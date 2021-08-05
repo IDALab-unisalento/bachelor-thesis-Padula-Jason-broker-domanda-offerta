@@ -12,7 +12,15 @@ public class ViaggioRouteDTO {
 	Date  startDate;
 	Date  endDate;
 	Date  maximumWithdrawal;
+	Date maximumBookingDate; //data entro la quel è possibile FARE la prenotazione
 
+
+	public Date getMaximumBookingDate() {
+		return maximumBookingDate;
+	}
+	public void setMaximumBookingDate(Date maximumBookingDate) {
+		this.maximumBookingDate = maximumBookingDate;
+	}
 	float availableCapacity;
 	
 	 

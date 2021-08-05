@@ -76,9 +76,12 @@ public class ViaggioRestController {
 		Viaggio  viaggio = new Viaggio();
 		
 		viaggio = modelMapper.map(viaggioDTO, Viaggio.class);
+		System.out.println(viaggio.toString());
 		
 		Viaggio viaggioSaved = viaggioService.save(viaggio);	
 		viaggioDTO.setId(viaggioSaved.getId());
+		System.out.println(viaggioDTO.toString());
+		
 		
 		return viaggioDTO;
 		

@@ -26,10 +26,12 @@ public class Viaggio {
 	User company;
 
 
+	
+
 	@Override
 	public String toString() {
 		return "Viaggio [id=" + id + ", initialFreeCapacity=" + initialFreeCapacity + ", costoPerKm=" + costoPerKm
-				+ ", vector=" + vector + ", company=" + company + "]";
+				+ ", maximumWithdrawal=" + maximumWithdrawal + ", vector=" + vector + ", company=" + company + "]";
 	}
 
 
