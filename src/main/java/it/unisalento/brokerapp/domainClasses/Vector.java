@@ -31,6 +31,9 @@ public class Vector {
 	@OneToMany(mappedBy = "vector", targetEntity = Viaggio.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<Viaggio> viaggi;
 	
+	@OneToMany(mappedBy = "vector", targetEntity = Anomaly.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	List<Anomaly> anomaliesList;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -85,6 +88,13 @@ public class Vector {
 	public void setBiomedicalProducts(Boolean biomedicalProducts) {
 		this.biomedicalProducts = biomedicalProducts;
 	}
+	public List<Anomaly> getAnomaliesList() {
+		return anomaliesList;
+	}
+	public void setAnomaliesList(List<Anomaly> anomaliesList) {
+		this.anomaliesList = anomaliesList;
+	}
+	
 	
 	
 }

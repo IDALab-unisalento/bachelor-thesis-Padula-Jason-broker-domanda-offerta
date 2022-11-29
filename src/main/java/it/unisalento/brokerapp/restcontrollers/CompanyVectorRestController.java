@@ -93,6 +93,7 @@ public class CompanyVectorRestController {
 		
 		companyVector.setCompany(companyService.getById(companyVectorDTO.getCompanyId()));
 		companyVector.setVector(vectorService.getById(companyVectorDTO.getVectorId()));
+	
 
 		CompanyVector offerVectorSaved = companyVectorService.save(companyVector);	
 		companyVectorDTO.setId(offerVectorSaved.getId());
