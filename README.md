@@ -1,1 +1,4 @@
-# wot-project-part1-broker-domanda-offerta
+# Implementazione gestione anomalie
+## Segnalazione e risoluzione delle anomalie 
+---
+
